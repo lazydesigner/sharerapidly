@@ -22,6 +22,7 @@
             width: 80%;
             margin: auto;
             display: flex;
+            flex-wrap: wrap;
             align-items: start;
             justify-content: space-between;
 
@@ -97,6 +98,15 @@
             margin-top:15px;
             cursor: pointer;
         }
+        @media screen and (max-width :770px){  
+            .row{width: 90%;gap: 20px;}
+            .row .col-1 button {width: 285px;margin-top: 21px;}
+            
+        }
+        @media screen and (max-width :425px){  
+            .row .col-1 button {margin-top: 21px;}
+
+        }
     </style>
 </head>
 
@@ -168,7 +178,7 @@
     if(isset($_SESSION['user'])){ ?>
         <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" >
     <?php }else{?>
-        <a href="<?= base_url() ?>priceing"><button>Active Now</button></a>
+        <a href="<?= base_url() ?>signup"  style="border:0;display:grid;place-items:center;" class="payment_btn">Active Now</a>
     <?php  } ?>
 </form>
                 </div>
@@ -219,7 +229,7 @@
     if(isset($_SESSION['user'])){ ?>
         <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" >
     <?php }else{?>
-        <a href="<?= base_url() ?>priceing"><button>Active Now</button></a>
+        <a href="<?= base_url() ?>signup"  style="border:0;display:grid;place-items:center;" class="payment_btn">Active Now</a>
     <?php  } ?>
 </form>
                 </div>
