@@ -28,9 +28,9 @@ if (isLocalServer()) {
 } else {
     // Live server settings
     $host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'shareanything';
+$user = 'u654976059_dsfvddf';
+$pass = '@Smile1427';
+$db = 'u654976059_dsfvddf';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
