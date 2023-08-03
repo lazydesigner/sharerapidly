@@ -58,7 +58,7 @@ if (isset($_SESSION['user'])) { ?>
                                     <label for="current">New Password</label><i id="ok_done" class="ri-checkbox-circle-fill ok_done"></i>
                                     <input type="text" placeholder="Enter New Password" name="n_pass" id="n_pass" />
                                     <p style="font-size:smaller;color:tomato;" id="error4"></p>
-                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="current">Confirm New Password</label><i id="ok_done" class="ri-checkbox-circle-fill ok_done"></i>
                                     <input type="password" placeholder="Enter Confirm New Password" name="cn_pass" id="cn_pass" />
@@ -77,15 +77,16 @@ if (isset($_SESSION['user'])) { ?>
         </div>
         <div class=""><?php include "./footer.php"; ?></div>
         <script>
-            document.getElementById('n_pass').addEventListener('keyup',function(){
-            if(this.value == ""){
-                document.getElementById('error4').innerText = "Password field can't be empty";
-            }else if(this.value.length < 8){
-                document.getElementById('error4').innerText = "Password Must be of 8 character";
-            }else{
-                document.getElementById('error4').innerText = "";
-            }
-        })
+            document.getElementById('n_pass').addEventListener('keyup', function() {
+                if (this.value == "") {
+                    document.getElementById('error4').innerText = "Password field can't be empty";
+                } else if (this.value.length < 8) {
+                    document.getElementById('error4').innerText = "Password Must be of 8 character";
+                } else {
+                    document.getElementById('error4').innerText = "";
+                }
+            })
+
             function menu_option(option) {
                 if (option == 'profile') {
                     window.location.href = '<?= base_url() ?>account/profile';
@@ -158,6 +159,7 @@ if (isset($_SESSION['user'])) { ?>
                     formdata.append('columnName', 'update password')
                     formdata.append('old_password', pass)
                     formdata.append('new_password', pass1)
+                    formdata.append('email', '<?=$_SESSION['user_email']?>')
                     fetch('<?= base_url() ?>update', {
                             method: 'POST',
                             body: formdata,
@@ -172,6 +174,11 @@ if (isset($_SESSION['user'])) { ?>
                             } else if (d['success']) {
                                 document.getElementById('success').style.cssText = "display: flex;background-color:cadetblue;";
                                 document.getElementById('success').innerHTML = d['success'];
+                                fetch('<?= base_url() ?>password_changed', {
+                                    method: "POST",
+                                    body: formdata, 
+                                    credentials: 'include',
+                                }).then(response => {})
                                 window.location.href = "<?= base_url() . "signin" ?>";
                             }
                         })

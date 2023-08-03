@@ -198,6 +198,11 @@ $email =  base64_decode($key[1])
                 }).then(res => res.json())
                 .then(d => {
                     if(d['success']){
+                        fetch('<?= base_url() ?>password_changed', {
+                            method: "POST",
+                            body: formdata, 
+                            credentials: 'include',
+                        }).then(response => {})
                         document.getElementById('password').innerHTML = "<div style='padding:5%;text-align:center;'><h1>"+d['success']+"</h1> <a href='<?= base_url()?>signin'><button>SignIn</button></a> </div>"; 
                     }else if(d['error']){
                         document.getElementById('password').innerText = d['error']

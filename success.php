@@ -168,11 +168,11 @@ if (!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) 
                     <h4>Payment Information</h4>
                     <p><b>Reference Number:</b> <?php echo $payment_id; ?></p>
                     <p><b>Transaction ID:</b> <?php echo $txn_id; ?></p>
-                    <p><b>Paid Amount:</b> <?php echo $payment_gross; ?></p>
+                    <p><b>Paid Amount:</b> $<?php echo $payment_gross; ?></p>
                     <p><b>Payment Status:</b> <?php echo $payment_status; ?></p>
 
                     <h4>Plan Information</h4>
-                    <p><b>Name : </b> ShareRapidly</p>
+                    <p><b>Plan Name : </b> ShareRapidly</p>
                     <p><b>Price : </b>$10</p>
                     <p><b>Plan Status : </b> Active</p>
                 <?php } else { ?>
