@@ -29,7 +29,7 @@ if (isLocalServer()) {
     // Live server settings
     $host = 'localhost';
 $user = 'u654976059_dsfvddf';
-$pass = '@Smile1427';
+$pass = 'Smile@1427';
 $db = 'u654976059_sharerapidly';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
