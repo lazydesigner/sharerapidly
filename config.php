@@ -1,4 +1,5 @@
 <?php 
+include './fun.php';
 /* 
  * PayPal and database configuration 
  */ 
@@ -7,9 +8,9 @@
 define('PAYPAL_ID', 'sb-oy6tn26635991@business.example.com'); 
 define('PAYPAL_SANDBOX', TRUE); //TRUE or FALSE 
  
-define('PAYPAL_RETURN_URL', 'http://localhost/sharerapidly/success.php'); 
-define('PAYPAL_CANCEL_URL', 'http://localhost/sharerapidly/cancel.php'); 
-define('PAYPAL_NOTIFY_URL', 'http://localhost/sharerapidly/ipn.php'); 
+define('PAYPAL_RETURN_URL', ' '.base_url() .'/success.php'); 
+define('PAYPAL_CANCEL_URL', ''.base_url() .' /cancel.php'); 
+define('PAYPAL_NOTIFY_URL', ' '.base_url() .' /ipn.php'); 
 define('PAYPAL_CURRENCY', 'USD'); 
  
 
