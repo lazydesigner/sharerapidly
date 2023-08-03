@@ -1,23 +1,28 @@
-body,html{
+body,
+html {
     width: 100%;
     height: 100%;
 }
-.dashboard_container{
+
+.dashboard_container {
     width: 100%;
     height: 100%;
 }
-.dashboard_page_navbar{
+
+.dashboard_page_navbar {
     width: 100%;
     height: auto;
 }
-.dashboard_{
+
+.dashboard_ {
     width: 100%;
     height: 100%;
     display: flex;
     /* align-items: center; */
     justify-content: center;
 }
-.dashboard_menu{
+
+.dashboard_menu {
     width: 20%;
     height: auto;
     display: grid;
@@ -26,25 +31,61 @@ body,html{
 
 }
 
-.dashboard_nav{display: block;height: 100%;}
-.dashboard_menu ul{list-style: none;margin: 0;padding: 0; height: 80%;display: flex;justify-content: space-between; flex-direction: column;}
-.dashboard_menu ul li{margin: 15px 0;}
-.dashboard_menu ul li a{display: flex;gap: 5px;align-items: center;color: whitesmoke;font-size: larger;}
-.dashboard_menu ul li a:hover{color: antiquewhite;}
-.dashboard_menu .dashboard_logo{
+.dashboard_nav {
+    display: block;
+    height: 100%;
+}
+
+.dashboard_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.dashboard_menu ul li {
+    margin: 15px 0;
+}
+
+.dashboard_menu ul li a {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: whitesmoke;
+    font-size: larger;
+}
+
+.dashboard_menu ul li a:hover {
+    color: antiquewhite;
+}
+
+.dashboard_menu .dashboard_logo {
     width: 100%;
 }
-.dashboard_pannel{
+
+.dashboard_pannel {
     width: 80%;
-    height:auto;
+    height: auto;
     align-self: self-start;
 }
-.active{
+
+.active {
     border-left: 2px solid tomato;
 }
+
 /* Password blog */
-.password,.files,.delete,.plan,.profile{padding: 5%;}
-.password input{
+.password,
+.files,
+.delete,
+.plan,
+.profile {
+    padding: 5%;
+}
+
+.password input {
     display: block;
     width: 60%;
     height: 40px;
@@ -54,14 +95,18 @@ body,html{
     padding: 2%;
     margin: .2%;
 }
-.form-group{
+
+.form-group {
     margin: 2% 0;
     font-weight: 600;
 }
-.form-group label{padding: 1%;
+
+.form-group label {
+    padding: 1%;
 }
+
 /* .dashboard_pannel_content{margin-top: 5%;} */
-.dash_button{
+.dash_button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,47 +115,66 @@ body,html{
     gap: 5px;
     /* float: right; */
 }
+
 /* Password blog end */
-/* Files Start */ 
-.files{height: 100%;width: 100%;padding: 3%;}
-.dashboard_files{
+/* Files Start */
+.files {
+    height: 100%;
+    width: 100%;
+    padding: 3%;
+}
+
+.dashboard_files {
     width: 100%;
     height: 470px;
     overflow: scroll;
     position: relative;
 }
+
 .dashboard_files::-webkit-scrollbar {
     width: 10px;
-  }
-  .dashboard_files::-webkit-scrollbar-thumb {
-    border-radius:5px;
-    background-color: grey; 
 }
+
+.dashboard_files::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: grey;
+}
+
 .dashboard_files::-webkit-scrollbar-track {
-    background-color: lightgray; 
-    border-radius:5px;
+    background-color: lightgray;
+    border-radius: 5px;
 }
-.table{
+
+.table {
     width: 1500px;
     border: 1px solid lightgrey;
     padding: 1%;
     border-radius: 5px;
 }
-h1{
+
+h1 {
     margin: 0;
     margin-bottom: 10px;
     padding: 0;
 }
-td{width:200px;}
-.table_data td{
+
+td {
+    width: 200px;
+}
+
+.table_data td {
     border: 1px solid lightgrey;
     padding: .7%;
 }
 
 /* Files Ends  UP230717V0583560*/
 /* Delete Start */
-.delete p{font-size: 18px;color: grey;}
-.warning{
+.delete p {
+    font-size: 18px;
+    color: grey;
+}
+
+.warning {
     width: 100%;
     height: auto;
     box-sizing: border-box;
@@ -122,10 +186,12 @@ td{width:200px;}
     color: rgb(216, 73, 12);
     background-color: rgb(248, 194, 95);
 }
-.warning_symbol i{
+
+.warning_symbol i {
     font-size: 3rem;
 }
-.form-group input{
+
+.form-group input {
     display: block;
     width: 60%;
     height: 40px;
@@ -135,32 +201,42 @@ td{width:200px;}
     padding: 2%;
     margin: .2%;
 }
+
 /* Delete Ends */
 /* Plan Starts */
-.dashboard_plan{
+.dashboard_plan {
     width: 100%;
     height: 100%;
     margin-top: 10%;
     display: flex;
     justify-content: space-evenly;
 }
-.dashboard_plan div{
+
+.dashboard_plan div {
     border: 1px solid lightgrey;
     border-radius: 5px;
     padding: 2%;
     text-align: center;
     background-color: rgb(251, 243, 232);
 }
-.dashboard_plan div h2{
 
-    padding: 0;margin: 0;
+.dashboard_plan div h2 {
+
+    padding: 0;
+    margin: 0;
 }
 
-/* Plan Ends */         
+/* Plan Ends */
 /* profile Start */
-.pro_dash{height: 100%;}
-.form_update{margin-top: 5%;}
-._name_{
+.pro_dash {
+    height: 100%;
+}
+
+.form_update {
+    margin-top: 5%;
+}
+
+._name_ {
     width: 100%;
     height: 100%;
     display: flex;
@@ -169,16 +245,34 @@ td{width:200px;}
     padding: 1% 2%;
     align-items: center;
     justify-content: space-around;
-} 
-.name_tag{width: 10%;}  
-.name{width: 85%;}
-.name_edit{width: 5%;}
-.name_edit i{cursor: pointer;font-size: 1.5rem;font-weight: bold;}
-#Edit_Form{display: none;}
+}
+
+.name_tag {
+    width: 10%;
+}
+
+.name {
+    width: 85%;
+}
+
+.name_edit {
+    width: 5%;
+}
+
+.name_edit i {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#Edit_Form {
+    display: none;
+}
+
 /* profile Ends */
 /* Success Message */
 
-.success{
+.success {
     display: none;
     position: fixed;
     width: 500px;
@@ -192,10 +286,145 @@ td{width:200px;}
     color: white;
     font-size: 1.5rem;
 }
-#ok_done{
+
+#ok_done {
     display: none;
     color: green;
 }
-.cn_error{color: tomato!important;}
-#del_button{user-select: none;}
+
+.cn_error {
+    color: tomato !important;
+}
+
+#del_button {
+    user-select: none;
+}
+
 /* Success Message */
+.dash_toggle {
+    display: none;
+}
+
+.dash_toggle2 {
+    display: none;
+}
+
+@media screen and (max-width:770px) {
+    .dashboard_menu {
+        width: 35%;
+    }
+
+    .name_tag {
+        width: 15%;
+    }
+
+    .dashboard_plan {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .form-group input {
+        display: block;
+        width: 90%;
+        height: 50px;
+    }
+
+    .warning {
+        margin-bottom: 30px
+    }
+
+    .form-group {
+        margin: 4% 0;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .dashboard_menu {
+        width: 60%;
+        transform: translateX(-260px);
+        position: absolute;
+        height: 100%;
+        z-index: 1;
+        transition: transform .5s;
+    }
+
+    .name_tag {
+        width: 15%;
+    }
+
+    .dashboard_ {
+        width: 100%;
+        justify-content: end;
+        display: block;
+        position: relative;
+    }
+
+    .dashboard_container {
+        position: relative;
+    }
+
+    .dashboard_plan {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .dashboard_pannel {
+        width: 100% !important;
+        height: 100%;
+    }
+
+    .form-group input {
+        display: block;
+        width: 90%;
+        height: 50px;
+    }
+
+    .warning {
+        margin-bottom: 30px
+    }
+
+    .form-group {
+        margin: 4% 0;
+    }
+
+    .dashboard_files {
+        height: 90%;
+    }
+
+    .dash_toggle {
+        color: white;
+        font-size: xx-large;
+        position: absolute;
+        cursor: pointer;
+        display: block;
+        right: 5%;
+    }
+
+    .dash_toggle2{
+        font-size: xx-large;
+        display: block;
+        padding: 2% 4%;
+    }
+    .dash_toggle2 i{
+        animation: toggle 1s linear infinite alternate;}
+    @keyframes toggle {
+        from{
+            margin-left: 0
+        }
+        to{
+            margin-left: 5px
+        }
+    }
+    .dash_toggle i{
+        animation: toggle1 1s linear infinite alternate;}
+    @keyframes toggle1 {
+        from{
+            margin-right: 0
+        }
+        to{
+            margin-right: 5px
+        }
+    }
+}

@@ -965,6 +965,7 @@ a {
     align-items: center;
     justify-content: center;
     transition: 1s;
+    z-index: 19;
   }
 
   .close {

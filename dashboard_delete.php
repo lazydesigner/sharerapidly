@@ -22,6 +22,9 @@ if(isset($_SESSION['user'])){
         header {
             background-color: rgb(42, 13, 61);
         }
+        .dashboard_container {
+    height: 110%;
+}
     </style>
 </head>
 
@@ -30,10 +33,11 @@ if(isset($_SESSION['user'])){
     <div class="dashboard_container">
         <div class="dashboard_page_navbar"><?php include "./navbar.php"; ?></div>
         <div class="dashboard_">
-            <div class="dashboard_menu">
+            <div class="dashboard_menu" id="dashboard_menu">
                 <!-- <div class="dashboard_logo">
                 <img src="<?= base_url() ?>assets/images/logo.png" width="100%" height="100%" alt="">
             </div> -->
+            <div class="dash_toggle" id="dash_toggle"><i class="ri-arrow-left-circle-line"></i></div>
                 <nav class="dashboard_nav">
                     <ul>
                       <div>  <li onclick="menu_option('profile')"><a><i class="ri-account-circle-fill"></i>Profile</a></li>
@@ -46,6 +50,9 @@ if(isset($_SESSION['user'])){
                 </nav>
             </div>
             <div class="dashboard_pannel">
+            <div>
+                    <div class="dash_toggle2" id="dash_toggle2"><i class="ri-arrow-right-circle-line"></i></div>
+                </div>
                 <div class="delete">
                     <h1>Delete your account</h1>
                     <!-- <p>By filling out the form below, you can entirely remove your sharerapidly.com account, along with all of your data and settings.</p> -->
@@ -170,6 +177,25 @@ if(isset($_SESSION['user'])){
                 }, 1500)
             }
 
+        })
+        toggle1 = document.getElementById("dash_toggle")
+        toggle2 = document.getElementById("dash_toggle2")
+
+        toggle2.addEventListener('click',function(){
+            document.getElementById("dashboard_menu").style.transform = 'translateX(0px)'
+            toggle2.style.display='none'
+            toggle1.style.display='block'
+        })
+        toggle1.addEventListener('click',function(){
+            document.getElementById("dashboard_menu").style.transform = 'translateX(-260px)'
+            toggle1.style.display='none'
+            toggle2.style.display='block'
+        })
+        document.getElementById('menu_').addEventListener('click', function() {
+            document.getElementById('mobile_nav').style.display = 'grid';
+        })
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('mobile_nav').style.display = 'none';
         })
     </script>
 
