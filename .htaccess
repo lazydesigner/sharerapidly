@@ -1,0 +1,42 @@
+php_value display_errors Off
+php_value mbstring.http_input auto
+php_value date.timezone Asia/Calcutta
+#php_value upload_max_filesize  XXM
+#php_value post_max_size XXM
+RewriteEngine on
+Options -Indexes
+RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteRule ^(.*)$ http://localhost/shareanything/$1 [L,R=301]
+RewriteRule ^$ home.php [NC,L]
+RewriteRule ^about-us([/]?)$ about_us.php [NC,L]
+RewriteRule ^priceing([/]?)$ priceing.php [NC,L]
+RewriteRule ^downloadfile/([0-9A-Za-z\-=]+)/([0-9A-Za-z\-=]+)/?$ download.php?slug=$1&id=$2 [NC,L]
+RewriteRule ^redirect([/]?)$ redirect.php [NC,L]
+RewriteRule ^generatelink([/]?)$ generatelink.php [NC,L]
+RewriteRule ^generate_otp([/]?)$ generate_otp.php [NC,L]
+RewriteRule ^otp_verification([/]?)$ verify.php [NC,L]
+RewriteRule ^otp_([/]?)$ otp_cerification.php [NC,L]
+RewriteRule ^resetpassword([/]?)$ resetpassword.php [NC,L]
+RewriteRule ^resetpasswordlink([/]?)$ reset_password_link.php [NC,L]
+RewriteRule ^passwordreset/([0-9A-Za-z\-_]+)([/]?)$ new_page_reset.php?email=$1 [NC,L]
+RewriteRule ^terms-of-services([/]?)$ terms-of-services.php [NC,L]
+RewriteRule ^signup([/]?)$ signup_form.php [NC,L]
+RewriteRule ^signin([/]?)$ sign_in.php [NC,L]
+RewriteRule ^update([/]?)$ update.php [NC,L]
+RewriteRule ^account/profile([/]?)$ dashboard_profile.php [NC,L]
+RewriteRule ^account/files([/]?)$ dashboard_file.php [NC,L]
+RewriteRule ^account/password([/]?)$ dashboard_password.php [NC,L]
+RewriteRule ^account/subscription([/]?)$ dashboard_plan.php [NC,L]
+RewriteRule ^account/delete([/]?)$ dashboard_delete.php [NC,L]
+RewriteRule ^logout([/]?)$ logout.php [NC,L]
+RewriteRule ^privacy-policy([/]?)$ privacy-policy.php [NC,L]
+RewriteRule ^delete([/]?)$ delete.php [NC,L]
+RewriteRule ^download/([0-9A-Za-z\-=]+)([/]?)$ functions.php?slug=$1 [NC,L]
+RewriteRule ^([0-9A-Za-z\-=]+)([/]?)$ downloadfile.php?slug=$1 [NC,L]
+
+
+
+# new file created update.php
+# delete and home file is updated
+#
