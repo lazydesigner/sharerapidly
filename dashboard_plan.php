@@ -52,12 +52,12 @@ if($result){
             </div> -->
                 <nav class="dashboard_nav">
                     <ul>
-                        <li onclick="menu_option('profile')"><a><i class="ri-account-circle-fill"></i>Profile</a></li>
+                       <div> <li onclick="menu_option('profile')"><a><i class="ri-account-circle-fill"></i>Profile</a></li>
                         <li onclick="menu_option('file')"><a><i class="ri-file-fill"></i>My Files</a></li>
                         <li onclick="menu_option('password')"><a><i class="ri-lock-2-fill"></i>Password</a></li>
-                        <li onclick="menu_option('subscription')"><a class="active"><i class="ri-price-tag-fill"></i>Subscription</a></li>
-                        <li><a href="<?= base_url() ?>logout"><i class="ri-logout-box-r-line"></i>Logout</a></li>
-                        <li onclick="menu_option('delete')"><a><i class="ri-delete-bin-5-fill"></i>Delete Account</a></li>
+                        <li onclick="menu_option('subscription')"><a class="active"><i class="ri-price-tag-fill"></i>Subscription</a></li></div>
+                        <div><li><a href="<?= base_url() ?>logout"><i class="ri-logout-box-r-line"></i>Logout</a></li>
+                        <li onclick="menu_option('delete')"><a><i class="ri-delete-bin-5-fill"></i>Delete Account</a></li></div>
                     </ul>
                 </nav>
             </div>

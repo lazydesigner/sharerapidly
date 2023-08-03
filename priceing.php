@@ -168,7 +168,7 @@
     if(isset($_SESSION['user'])){ ?>
         <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" >
     <?php }else{?>
-        <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" disabled>
+        <a href="<?= base_url() ?>priceing"><button>Active Now</button></a>
     <?php  } ?>
 </form>
                 </div>
@@ -219,7 +219,7 @@
     if(isset($_SESSION['user'])){ ?>
         <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" >
     <?php }else{?>
-        <input type="submit" name="submit" style="border:0;display:block;" class="payment_btn" value="Active Now" disabled>
+        <a href="<?= base_url() ?>priceing"><button>Active Now</button></a>
     <?php  } ?>
 </form>
                 </div>
