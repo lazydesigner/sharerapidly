@@ -12,7 +12,7 @@ function base_url(){
 
     $baseUrl = $protocol . $domain . $subdirectory;
     // $baseUrl = $protocol . $domain . $subdirectory;
-    return $baseUrl;
+    return $baseUrl.'/';
 
 }
 
