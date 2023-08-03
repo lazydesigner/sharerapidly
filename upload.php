@@ -113,8 +113,8 @@ include './fun.php'
                         $r = mysqli_fetch_assoc($result22);
                         if($r['plan'] == 2 || $r['plan'] == 3){
                             $count = 5;
-                        }else{ $count = 1;}
-                    }else{ $count = 1;}
+                        }else{ $count = 2;}
+                    }else{ $count = 2;}
 
                     if (isset($_SESSION['user'])) {
                         $query = "INSERT INTO user_share(`image`,`image_path`,`image_type`,`image_size` ,`identification`,`download_count`,`expiry`,`user_id`) VALUES ('$fileName','$targetFile','$image_type',$image_size ,'$identificatin',$count ,'$futureDate',{$_SESSION['user_id']} )";

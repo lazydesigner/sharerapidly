@@ -124,7 +124,7 @@ $coun = mysqli_query($conn, $sql);
 
 
         var image = document.getElementById('desk_image');
-        var originalSrc = '<?= base_url() ?>a.png';
+        var originalSrc = '<?= base_url() ?>assets/images/a.webp';
         var alternateSrc = '<?= base_url() ?>mobie_share.webp';
 
         function handleResize() {
