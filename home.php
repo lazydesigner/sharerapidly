@@ -227,10 +227,10 @@ if(mysqli_num_rows($result)>0){
         handleResize();
 
 
-        window.addEventListener('beforeunload', function(e) {
-            e.preventDefault();
-            e.returnValue = '';
-        })
+        // window.addEventListener('beforeunload', function(e) {
+        //     e.preventDefault();
+        //     e.returnValue = '';
+        // })
         // localStorage.clear();
     </script>
 
