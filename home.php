@@ -1,7 +1,5 @@
 <?php
 
-use Stripe\Plan;
-
  session_start();
 
 ini_set('session.gc_maxlifetime', 3600);
@@ -214,7 +212,7 @@ if(mysqli_num_rows($result)>0){
             document.getElementById('mobile_nav').style.display = 'none';
         })
         var image = document.getElementById('desk_image');
-        var originalSrc = '<?= base_url() ?>a.png';
+        var originalSrc = '<?= base_url() ?>assets/images/a.webp';
         var alternateSrc = '<?= base_url() ?>mobie_share.webp';
 
         function handleResize() {
