@@ -30,7 +30,7 @@ if (isLocalServer()) {
     $host = 'localhost';
 $user = 'u654976059_dsfvddf';
 $pass = '@Smile1427';
-$db = 'u654976059_dsfvddf';
+$db = 'u654976059_sharerapidly';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
