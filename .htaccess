@@ -1,12 +1,12 @@
 php_value display_errors Off
 php_value mbstring.http_input auto
 php_value date.timezone Asia/Calcutta
-#php_value upload_max_filesize  XXM
-#php_value post_max_size XXM
+php_value upload_max_filesize  512M
+php_value post_max_size 512M
 RewriteEngine on
 Options -Indexes
 RewriteCond %{HTTPS} off
-#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 #RewriteRule ^(.*)$ http://localhost/shareanything/$1 [L,R=301]
 RewriteRule ^$ home.php [NC,L]
 RewriteRule ^about-us([/]?)$ about_us.php [NC,L]
