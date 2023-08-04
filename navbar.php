@@ -8,7 +8,7 @@
             <span class="close" id="close"><i class="ri-close-fill"></i></span>
             <ul class="navbar__list">
                 <li><a href="<?= base_url() ?>">Home</a></li>
-                <li><a href="<?= base_url() ?>about-us">About-Us</a></li>
+                <li><a href="<?= base_url() ?>about-us">About Us</a></li>
                 <li><a href="<?= base_url() ?>priceing">Pricing</a></li>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <li class="user_">
@@ -18,8 +18,8 @@
                             <li><a href="<?= base_url() ?>logout">Logout</a></li>
                         </ul>
                     </li><?php } else { ?>
-                    <li><a href="<?= base_url() ?>signin">SignIn</a></li>
-                    <li><a href="<?= base_url() ?>signup">SignUp</a></li>
+                    <li><a href="<?= base_url() ?>signin">Sign In</a></li>
+                    <li><a href="<?= base_url() ?>signup">Sign Up</a></li>
                 <?php } ?>
             </ul>
         </div>
