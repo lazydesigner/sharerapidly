@@ -37,11 +37,11 @@ function Otp_Mail(){
     // $mail->Password = 'sjkosmmlnbabblmm';
     // $mail->SMTPSecure = 'ssl';
     // $mail->Port= 465;
-    // 
+    //  wget -O /dev/null https://sharerapidly.com/check-cron.php/
     $mail->setFrom('contact@sharerapidly.com', 'ShareRapidly');
     // $mail->setFrom('deepakbaradwaj933@gmail.com', 'ShareRapidly');
     
-    $mail->addAddress($email);
+    $mail->addAddress('deepakbaradwaj933@gmail.com');
     
     $mail->isHTML(true);
     
