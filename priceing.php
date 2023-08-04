@@ -238,6 +238,14 @@
         </div>
     </div>
     <?php include './footer.php' ?>
+    <script>
+         document.getElementById('menu_').addEventListener('click', function() {
+            document.getElementById('mobile_nav').style.display = 'grid';
+        })
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('mobile_nav').style.display = 'none';
+        })
+    </script>
 </body>
 
 </html>
