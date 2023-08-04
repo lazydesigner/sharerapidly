@@ -109,7 +109,7 @@
 
                 <p>You can directly email us at <a href="mailto:contact@sharerapidly.com">contact@sharerapidly.com </a> or send a request through the form below.</p>
             </div>
-            <form action="" method="post">
+            <form action="" method="post" id="contact-form">
                 <div class="contact-form-group">
                     <input type="text" name="name" id="name" placeholder="Enter Your Name">
                     <input type="email" name="email" id="email" placeholder="Enter Your Email">
@@ -131,6 +131,14 @@
         document.getElementById('close').addEventListener('click', function() {
             document.getElementById('mobile_nav').style.display = 'none';
         })
+
+        document.getElementById('contact-form').addEventListener('submit',function(e){
+            e.preventDefault();
+            FormData = new FormData();
+            
+
+        })
+
     </script>
 </body>
 
