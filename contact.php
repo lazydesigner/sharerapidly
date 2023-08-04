@@ -94,13 +94,24 @@
             }
 
         }
+
+        .contact {
+            display: block;
+        }
+
+        .animation {
+            width: 300px;
+            height: 100%;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div><?php include './navbar.php' ?></div>
     <div class="contact-body">
-        <div class="contact">
+        <img src="https://lottie.host/8056dc47-663c-4e17-ace4-99e74d5090a1/6dSiJfdCgw.lottie" alt="">
+        <div class="contact" id="contact">
             <h1 style="font-size: 2.5rem;">Contact Us</h1>
             <div>
                 <p>If you have any questions please fill contact us Form or directly email us.</p>
@@ -109,21 +120,24 @@
 
                 <p>You can directly email us at <a href="mailto:contact@sharerapidly.com">contact@sharerapidly.com </a> or send a request through the form below.</p>
             </div>
-            <form action="" method="post" id="contact-form">
+            <form method="post" id="contact-form">
                 <div class="contact-form-group">
                     <input type="text" name="name" id="name" placeholder="Enter Your Name">
                     <input type="email" name="email" id="email" placeholder="Enter Your Email">
                 </div>
                 <div class="contact-form-group">
-                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter Your Message" style="resize: none;"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message" style="resize: none;"></textarea>
                 </div>
                 <div class="contact-form-group">
                     <button><span>Send <i class="ri-send-plane-fill flyplan"></i></span></button>
                 </div>
             </form>
         </div>
+        <div class="animation" id="container">
+        </div>
     </div>
     <div><?php include './footer.php' ?></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
     <script>
         document.getElementById('menu_').addEventListener('click', function() {
             document.getElementById('mobile_nav').style.display = 'grid';
@@ -132,14 +146,40 @@
             document.getElementById('mobile_nav').style.display = 'none';
         })
 
-        document.getElementById('contact-form').addEventListener('submit',function(e){
+        const formData = new FormData();
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            FormData = new FormData();
-            
-
+            formData.append('name', document.getElementById('name').value)
+            formData.append('email', document.getElementById('email').value)
+            formData.append('message', document.getElementById('message').value)
+            document.getElementById('contact').style.display = 'none'
+            document.getElementById('container').style.display = 'block'
+            fetch('support', {
+                method: 'POST',
+                body: formData
+            }).then(res => res.json()).then(d => {
+                if (d['status'] == 200) {
+                    this.reset()
+                    document.getElementById('container').style.display = 'none'
+                    document.getElementById('contact').style.display = 'block'
+                }else{
+                    alert("Error In Sending Mail")
+                }
+            })
         })
-
     </script>
+
+    <script>
+        var animation = bodymovin.loadAnimation({
+            // animationData: { /* ... */ },
+            container: document.getElementById('container'), // required
+            path: 'assets/mail.json', // required
+            renderer: 'svg', // required
+            loop: true, // optional
+            autoplay: true, // optional
+        });
+    </script>
+
 </body>
 
 </html>
