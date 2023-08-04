@@ -23,6 +23,7 @@
 
         .contact-form-group {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin: 10px 0;
         }
@@ -103,6 +104,9 @@
             width: 300px;
             height: 100%;
             display: none;
+        }
+        @media screen and (max-width:600px) {
+            .contact-form-group input {width: 100%;}
         }
     </style>
 </head>
