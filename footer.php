@@ -8,7 +8,7 @@
             <ul>
                 <li><a href="<?= base_url() ?>terms-of-services">Terms of Services</a></li>
                 <li><a href="<?= base_url() ?>privacy-policy">Privacy Policy</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="<?= base_url() ?>contact-us">Contact</a></li>
             </ul>
         </div>
         <div class="col-4 follow_icon">
