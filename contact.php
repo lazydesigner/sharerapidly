@@ -105,6 +105,9 @@
             height: 100%;
             display: none;
         }
+        @media screen and (max-width:770px) {
+            .contact-form-group input {width: 49%;}
+        }
         @media screen and (max-width:600px) {
             .contact-form-group input {width: 100%;}
         }
