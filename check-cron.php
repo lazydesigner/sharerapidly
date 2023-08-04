@@ -10,9 +10,6 @@ require './phpMailer/src/PHPMailer.php';
 require './phpMailer/src/SMTP.php';
 
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-
 function Otp_Mail(){
      
     $email =  'deepakbaradwaj933@gmail.com';
@@ -75,7 +72,3 @@ function Otp_Mail(){
 }
 
 Otp_Mail();
-
-}else{
-    echo 'Not Working';
-}
