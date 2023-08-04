@@ -47,9 +47,14 @@ fileLink2.addEventListener('click', function (event) {
   event.preventDefault();
   let randomnum = Math.floor(Math.random() * 1000)
   unique = randomnum + ip;
+  if(unique.length == 0){
+    alert('Please Try After Sometime Or Refresh the page ')
+  }else{
+    fileInput2.click();
+  }
   createCookie("id", unique, 60)
   // var selectedFiles = fileInput2.files;
-  fileInput2.click();
+  
 });
 
 
