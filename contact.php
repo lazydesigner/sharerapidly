@@ -129,11 +129,11 @@
             </div>
             <form method="post" id="contact-form">
                 <div class="contact-form-group">
-                    <input type="text" name="name" id="name" placeholder="Enter Your Name">
-                    <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
                 </div>
                 <div class="contact-form-group">
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message" style="resize: none;"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message" style="resize: none;" required></textarea>
                 </div>
                 <div class="contact-form-group">
                     <button><span>Send <i class="ri-send-plane-fill flyplan"></i></span></button>
