@@ -99,7 +99,7 @@ $coun = mysqli_query($conn, $sql);
                     downloadLink.click();
                     downloadLink.remove();
                     RemoveFromList(id, slug);
-                    location.reload();
+                    // location.reload();
                 } else {
                     console.error('Error:', response);
                 }
@@ -113,8 +113,12 @@ $coun = mysqli_query($conn, $sql);
                         'id': id,
                         'slug': slug,
                     })
-                }).then((d) => d.text())
-                .then((d) => console.log(d))
+                }).then((d) => d.json())
+                .then((d) =>{
+                    if(d['status']==200){
+                        location.reload();
+                    }
+                })
         }
         document.getElementById('menu_').addEventListener('click', function() {
             document.getElementById('mobile_nav').style.display = 'grid';
@@ -142,9 +146,3 @@ $coun = mysqli_query($conn, $sql);
 </body>
 
 </html>
-<!-- 
-
-.container{height:auto;}
-.container2{height:auto;}
-
- -->

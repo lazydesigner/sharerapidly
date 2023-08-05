@@ -47,7 +47,10 @@ fileLink2.addEventListener('click', function (event) {
   event.preventDefault();
   let randomnum = Math.floor(Math.random() * 1000)
   unique = randomnum + ip;
-  if(unique.length == 0){
+  // console.log(typeof(unique))
+  // console.log(unique)
+  // console.log(unique.length)
+  if(unique.length == 0 || unique == NaN || 'number' == typeof(unique) ){
     alert('Please Try After Sometime Or Refresh the page ')
   }else{
     fileInput2.click();

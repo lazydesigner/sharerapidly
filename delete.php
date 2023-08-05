@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         $unlink = './' . $row['image_path'] . '';
         if (file_exists($unlink)) {
             if (unlink($unlink)) {
-                echo 'File successfully deleted from the folder.';
+                echo json_encode(['status'=>200]);
             }
         }
         myFunction($conn);
@@ -76,7 +76,5 @@ function myFunction($conn)
             }
             myFunction($conn);
         }
-    } else {
-        echo 'No Record';
     }
 }
