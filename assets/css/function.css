@@ -57,6 +57,41 @@ body,html{width: 100%;
           align-items: center;
           justify-content: center;
         }
+
+        .mobile_nav {
+          display: block;
+        }
+        
+        .user_ {
+          position: relative;
+        }
+        
+        .user_ a {
+          display: flex;
+          align-items: center;
+        }
+        
+        .user_ul {
+          border-radius: 5px;
+          display: none;
+          width: 130px;
+          height: auto;
+          position: absolute;
+          top: 25px;
+          left: -20%;
+          list-style: none;
+          background-color: rgb(42, 13, 61);
+          padding: 10%;
+        }
+        
+        .user_ul li {
+          margin: 10% 0;
+        }
+        
+        .user_:hover .user_ul {
+          display: inline-block;
+        }
+
 /* Navbar */
 /* Footer */
 
