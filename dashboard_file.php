@@ -22,7 +22,8 @@ if(isset($_SESSION['user'])){
         header {
             background-color: rgb(42, 13, 61);
         }
-        .dashboard_pannel { width: 72%; }
+        @media screen and (max-width:770px) {
+         .dashboard_pannel { width: 72%; }}
     </style>
 </head>
 

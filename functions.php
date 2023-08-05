@@ -12,8 +12,11 @@ if (isset($_SESSION['user'])) {
 } else {
     $sql = "SELECT * FROM `sharething` WHERE identification = '" . base64_decode($_GET['slug']) . "'";
 }
-$result = mysqli_query($conn, $sql);
-$coun = mysqli_query($conn, $sql);
+
+$coun = mysqli_query($conn, $sql); 
+
+$result = mysqli_query($conn, $sql); 
+    $result_pro  = mysqli_query($conn,  "SELECT * FROM `user_share` WHERE identification = '" . base64_decode($_GET['slug']) . "'"); 
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +68,16 @@ $coun = mysqli_query($conn, $sql);
                         </button>
                         </div>';
                         }
+                    }  elseif(mysqli_num_rows($result_pro) > 0){ ?>
+                    
+                    <div class="container" style="display: grid;align-items:center;justify-content:center;width:100%;height:100%;">
+                            <div class="box" style="text-align: center;background-color:transparent;box-shadow:5px 5px 25px 5px white;">
+                                <h1 style="text-align: center;width:80%;margin:auto;user-select:none;">The File Your Are Trying To Download is securely shared and Encrupted</h1>
+                                <h2 style="text-align: center;width:80%;margin:auto;user-select:none;color:white;">Please Signup Before downloading</h2>
+                                <a href="<?= base_url() ?>signup" style="font-size: 2rem;color:black;">Signup</a>
+                            </div>
+                        </div>
+                    <?php
                     } else {
                         ?>
 
