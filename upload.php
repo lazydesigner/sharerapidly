@@ -111,7 +111,7 @@ include './fun.php'
                     $result22 = mysqli_query($conn, $user_1);
                     if (mysqli_num_rows($result22) > 0) {
                         $r = mysqli_fetch_assoc($result22);
-                        if($r['plan'] == 2 || $r['plan'] == 3){
+                        if($r['plan'] == 2 || $r['plan'] == 1){
                             $count = 5;
                         }else{ $count = 2;}
                     }else{ $count = 2;}

@@ -92,7 +92,7 @@ if(mysqli_num_rows($result)>0){
                                 <select name="download_count" id="download_count">
                                     <option value="1">1 Download </option>
                                     <option value="2">2 Downloads </option>
-                                    <?php if($row['plan'] == 2 || $row['plan'] == 3 ){ ?>
+                                    <?php if($row['plan'] == 1 || $row['plan'] == 2 ){ ?>
                                     <option value="3" >3 Downloads </option>
                                     <option value="4" >4 Downloads </option>
                                     <option value="5" selected>5 Downloads </option>
@@ -110,7 +110,7 @@ if(mysqli_num_rows($result)>0){
                                 <select name="expiry_days" id="expiry_days">
                                     <option value="1">1 Day</option>
                                     <option value="2">2 Days</option>
-                                    <?php if($row['plan'] == 2 || $row['plan'] == 3 ){ ?>
+                                    <?php if($row['plan'] == 1 || $row['plan'] == 2 ){ ?>
                                     <option value="5" selected>5 Days </option>
                                     <option value="7" >7 Days </option>
                                     <option value="30" >30 Days </option>
