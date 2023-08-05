@@ -10,4 +10,6 @@ header('Content-Disposition: attachment; filename="' . basename($file) . '"');
 header('Content-Length: ' . filesize($file));
 
 // Read the file and output its contents
-readfile(base_url().$file);
+
+    // echo filesize($file);
+readfile($file);
