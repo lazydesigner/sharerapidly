@@ -26,17 +26,9 @@ function Otp_Mail(){
     $mail->SMTPAuth = true;
     $mail->Username = 'contact@sharerapidly.com';
     $mail->Password = 'Smile@1427';
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tls';
     $mail->Port= 465;
-    // $mail->Host = 'smtp.gmail.com';
-    // $mail->SMTPAuth = true;
-    // $mail->Username = 'deepakbaradwaj933@gmail.com';
-    // $mail->Password = 'sjkosmmlnbabblmm';
-    // $mail->SMTPSecure = 'ssl';
-    // $mail->Port= 465;
-    //  wget -O /dev/null https://sharerapidly.com/check-cron.php/
     $mail->setFrom('contact@sharerapidly.com', 'ShareRapidly');
-    // $mail->setFrom('deepakbaradwaj933@gmail.com', 'ShareRapidly');
     
     $mail->addAddress('deepakbaradwaj933@gmail.com');
     
