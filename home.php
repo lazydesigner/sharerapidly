@@ -24,6 +24,10 @@ if(mysqli_num_rows($result)>0){
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'" async>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/index.css">
+    <meta name="title" content="ShareRapidly - Online Send Large Files and Share Photos Free and Securely." >
+    <meta name="keywords" content="share files, file share, wetransfer, we transfer, transfernow, pcloud, file transfer,sharerapidly">
+    <meta name="description" content="ShareRapidly is a quickest, simple and securely send large files, photos and big documents up to 2 GB per transfer free.">
+    <meta name="google-site-verification" content="fhe__S34yloFeoD5acypddjVeu5AnNIupGxAMEkIg2c" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plupload/3.1.5/plupload.full.min.js" integrity="sha512-yLlgKhLJjLhTYMuClLJ8GGEzwSCn/uwigfXug5Wf2uU5UdOtA8WRSMJHJcZ+mHgHmNY+lDc/Sfp86IT9hve0Rg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
 
