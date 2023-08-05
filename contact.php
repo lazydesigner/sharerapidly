@@ -30,7 +30,7 @@
 
         .contact-form-group input {
             display: block;
-            width: 50%;
+            width: 49%;
             height: 40px;
             padding: 1%;
             outline: 0;
