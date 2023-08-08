@@ -22,6 +22,7 @@ if(isset($_SESSION['user'])){
         header {
             background-color: rgb(42, 13, 61);
         }
+        body{user-select: none;}
         @media screen and (max-width:770px) {
          .dashboard_pannel { width: 72%; }}
     </style>
@@ -93,7 +94,8 @@ if(isset($_SESSION['user'])){
                                             $normalTime = date("Y-m-d H:i:s", $timestamp);
                                             $timestamp2 = strtotime($row['created']);
                                             $normalTime2 = date("Y-m-d H:i:s", $timestamp2);
-                                            echo '
+                                            if($row['link_status'] == 'TRUE'){
+                                                echo '
                                                 <tr class="table_data">
                                                     <td>' . $row['image'] . '</td>
                                                     <td><a href="' . $row['link'] . '" target="_blank">' . $row['link'] . '</a></td>
@@ -102,6 +104,18 @@ if(isset($_SESSION['user'])){
                                                     <td>' . $normalTime . '</td>
                                                 </tr>
                                             ';
+                                            }else{
+                                                echo '
+                                                <tr class="table_data" style="color:grey;">
+                                                    <td>' . $row['image'] . '</td>
+                                                    <td><a href="' . $row['link'] . '" target="_blank" style="text-decoration: line-through;pointer-events: none;cursor: default;cursor: not-allowed;color:lightgrey;">' . $row['link'] . '</a></td>
+                                                    <td>' . $row['download_count'] . '</td>
+                                                    <td>' . $normalTime2 . '</td>
+                                                    <td>' . $normalTime . '</td>
+                                                </tr>
+                                            ';
+                                            }
+                                           
                                         }
                                     } else {
                                         echo 'Not found' . mysqli_error($conn);
@@ -112,6 +126,7 @@ if(isset($_SESSION['user'])){
                                 ?>
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>
@@ -153,6 +168,7 @@ if(isset($_SESSION['user'])){
         document.getElementById('close').addEventListener('click', function() {
             document.getElementById('mobile_nav').style.display = 'none';
         })
+        document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 
 </body>

@@ -59,14 +59,26 @@ $result = mysqli_query($conn, $sql);
                     <div class="box2">
                         <?php
                         while ($row = $result->fetch_assoc()) {
-                            echo '<div class="file">
-                        <input type="text" value="' . $row["image"] . '" readonly><button onclick="Download(\'' . $row['image_path'] . '\',' . $row["id"] . ',\'' . base64_decode($_GET['slug']) . '\')" class="Btn">
-                            <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
-                            </svg>
-                            <span class="tooltip">Download</span>
-                        </button>
-                        </div>';
+                            if($row['link_status'] == 'TRUE'){
+                                echo '<div class="file">
+                                <input type="text" value="' . $row["image"] . '" readonly> <button onclick="Download(\'' . $row['image_path'] . '\',' . $row["id"] . ',\'' . base64_decode($_GET['slug']) . '\')" class="Btn">
+                                    <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                                    </svg>
+                                    <span class="tooltip">Download</span>
+                                </button>
+                                </div>';
+                            }else{
+                                echo '<div class="file">
+                                <input type="text" value="' . $row["image"] . '" readonly> <button onclick="alert(\'Plan Is Expired! Renew your plan to download\')" class="Btn">
+                                    <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                                    </svg>
+                                    <span class="tooltip">Download</span>
+                                </button>
+                                </div>';
+                            }
+                           
                         }
                     }  elseif(mysqli_num_rows($result_pro) > 0){ ?>
                     
