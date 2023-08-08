@@ -74,11 +74,11 @@ if($result){
                             <p><?= $row['plan_name'] ?></p>
                         </div>
                         <div class="max_upload_size">
-                            <h2>Max Upload Size</h2>
+                            <h2>Max Storage</h2>
                             <p><?= $row['total_storage'] ?></p>
                         </div>
                         <div class="max_storage">
-                            <h2>Max Storage</h2>
+                            <h2>Max Upload Size</h2>
                             <p><?= $row['upload_size'] ?></p>
                         </div>
                         <div class="storage">
