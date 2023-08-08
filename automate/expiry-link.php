@@ -2,6 +2,7 @@
 
 <?php
 include '../connection.php';
+date_default_timezone_set('Asia/Kolkata');
 $presentDate = date('Y-m-d H:i:s');
 
 // For Registered User
