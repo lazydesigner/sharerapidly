@@ -15,6 +15,7 @@ if($res){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'" async>
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/index.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favicon.ico" type="image/x-icon">
     <title>Price || Sharerapidly File Share </title>
     <style>
         header {
