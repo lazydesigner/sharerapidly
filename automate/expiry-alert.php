@@ -22,7 +22,7 @@ echo $query . '<br>';
 if ($res = mysqli_query($conn, $query)) {
     if (mysqli_num_rows($res) > 0) {
         while($row = mysqli_fetch_assoc($res)){
-            $update_query = "UPDATE userdata SET `plan` = 3, `plan_start`= '$previous_date', `plan_end`     = '$One_day_before_previous_date' WHERE `email` = '{$row['email']}' ";
+            $update_query = "UPDATE userdata SET `plan` = 3, `plan_start`= '$previous_date', `plan_end` = '$One_day_before_previous_date', `data_transfer` = 0 WHERE `email` = '{$row['email']}' ";
             $res = mysqli_query($conn,$update_query);
             if($res){
             }else{
