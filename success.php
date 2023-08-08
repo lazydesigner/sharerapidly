@@ -17,6 +17,10 @@ if (!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) 
     $payment_status = $_GET['st'];
 
 
+    $plan_detail = "SELECT * FROM priceing WHERE plan_id = $item_number";
+    $planUpdateQuery=mysqli_query( $conn,$plan_detail );
+    $rowplan = mysqli_fetch_assoc( $planUpdateQuery );
+
     //Get Product infomation from the database
     // $productResult = $conn->query("SELECT * FROM products WHERE id = ".$item_number);
     // $productRow = $productResult->fetch_assoc();
@@ -172,8 +176,8 @@ if (!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) 
                     <p><b>Payment Status:</b> <?php echo $payment_status; ?></p>
 
                     <h4>Plan Information</h4>
-                    <p><b>Plan Name : </b> ShareRapidly</p>
-                    <p><b>Price : </b>$10</p>
+                    <p><b>Plan Name : </b> ShareRapidly <?= $rowplan['plan_name']?> Plan</p>
+                    <p><b>Price : </b>$<?php echo $payment_gross; ?></p>
                     <p><b>Plan Status : </b> Active</p>
                 <?php } else { ?>
                     <h1 class="error">Your Payment has failed</h1>
