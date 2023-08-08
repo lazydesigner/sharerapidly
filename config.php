@@ -4,8 +4,8 @@
  */ 
   
 // PayPal configuration 
-define('PAYPAL_ID', 'sb-oy6tn26635991@business.example.com'); 
-define('PAYPAL_SANDBOX', TRUE); //TRUE or FALSE 
+define('PAYPAL_ID', 'info@pksolutions.org'); 
+define('PAYPAL_SANDBOX', FALSE); //TRUE or FALSE 
  
 define('PAYPAL_RETURN_URL', ''. base_url() .'/success.php'); 
 define('PAYPAL_CANCEL_URL', ''. base_url() .'/cancel.php'); 
