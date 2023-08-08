@@ -31,7 +31,7 @@ if ($result) {
 <body>
     <div class="success" id="success"></div>
     <div class="dashboard_container pro_dash" id="pro_dash">
-        <div class="dashboard_page_navbar"><?php include "./navbar.php"; ?></div>
+        <div class="dashboard_page_navbar"><?php include "../navbar.php"; ?></div>
         <div class="dashboard_ pro_dash" id="pro_dash">
             <div class="dashboard_menu" id="dashboard_menu">
                 <!-- <div class="dashboard_logo">
@@ -94,7 +94,7 @@ if ($result) {
             </div>
         </div>
     </div>
-    <div class=""><?php include "./footer.php"; ?></div>
+    <div class=""><?php include "../footer.php"; ?></div>
     <script>
         function menu_option(option) {
             if (option == 'profile') {
