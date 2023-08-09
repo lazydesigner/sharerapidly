@@ -21,7 +21,7 @@ $count = formatBytes($row['data_transfer']);
 $total_storage = parseFormattedSize($row['total_storage']);
 
 if($row['total_storage'] == $count){
-    echo json_encode(['status'=>500]);
+    echo json_encode(['status'=>500,'data_left'=>'$data_left']);
 }else{
     $data_left =  $total_storage - $row['data_transfer'];
     if($data['filesize'] >= $data_left ){
