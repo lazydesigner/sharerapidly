@@ -34,7 +34,7 @@ include '../fun.php';?>
         <input type="hidden" name="cancel_return" value="<?php echo PAYPAL_CANCEL_URL; ?>">
 
         <!-- Display the payment button -->
-        <input type="submit" name="submit"  style="border:0;display:block; width:200px;height:30px;border-radius:5px;background-color:gold;font-weight:bold;" class="payment_btn" value="Pay Now">
+        <input type="submit" name="submit"  style="border:0;display:block; width:200px;height:30px;border-radius:5px;background-color:gold;font-weight:bold;cursor:pointer;" class="payment_btn" value="Pay Now">
 
     </form>
 </body>
