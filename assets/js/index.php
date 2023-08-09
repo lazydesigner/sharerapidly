@@ -95,21 +95,21 @@ j = 0
       });
       file_count = files.length
 
-      if('<?=$row['email'] ?>' != ''){
+      // if('<?=$row['email'] ?>' != ''){
 
-        fetch('<?= base_url() ?>check_data_limit.php',{
-          method:'POST',
-          body : JSON.stringify({
-            'filesize' : files[0]['size']
-          })
-        }).then(res=>res.json()).then(d=>{
-          if(d['status'] == 200){uploader.start();}else{
-            alert("You have exceeded your data limit "+d['data_left']);
-          }
-        })
-      }else{
+      //   fetch('<?= base_url() ?>check_data_limit.php',{
+      //     method:'POST',
+      //     body : JSON.stringify({
+      //       'filesize' : files[0]['size']
+      //     })
+      //   }).then(res=>res.json()).then(d=>{
+      //     if(d['status'] == 200){uploader.start();}else{
+      //       alert("You have exceeded your data limit "+d['data_left']);
+      //     }
+      //   })
+      // }else{
         uploader.start(); // Work on upload user limit 
-      }
+      // }
     },
 
     UploadProgress: function (up, file) {
