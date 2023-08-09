@@ -47,9 +47,6 @@ fileLink2.addEventListener('click', function (event) {
   event.preventDefault();
   let randomnum = Math.floor(Math.random() * 1000)
   unique = randomnum + ip;
-  // console.log(typeof(unique))
-  // console.log(unique)
-  // console.log(unique.length)
   if(unique.length == 0 || unique == NaN || 'number' == typeof(unique) ){
     alert('Please Try After Sometime Or Refresh the page ')
   }else{
@@ -61,23 +58,6 @@ fileLink2.addEventListener('click', function (event) {
 });
 
 
-async function executeLoop(x) {
-  try {
-    for (var i = 0; i < x.length; i++) {
-      formData.append('images', x[i]);
-
-      // await UploadFile(x[i])
-      // if (i == (x.length - 1)) {
-      //   document.getElementById('from-container').style.display = 'none';
-      //   document.getElementById('copyslug').style.display = 'grid';
-      //   const response = await DownloadLink();
-      // }
-    }
-
-  } catch (error) {
-    console.error('Upload error:', error);
-  }
-}
 // QRCODE
 
 // COPY TEXT URL
@@ -95,7 +75,7 @@ j = 0
     mime_types: [
       { title: "Image files", extensions: "jpg,jpeg,gif,png,webp" },
       { title: "Video files", extensions: "mp4,avi,mpeg,mpg,mov,wmv" },
-      { title: "Zip files", extensions: "zip" },
+      { title: "Zip files", extensions: "zip,rar,rar4" },
       { title: "Document files", extensions: "pdf,docx,xlsx,txt,exe" }
     ]
   },
@@ -114,7 +94,22 @@ j = 0
         document.getElementById('fileList').innerHTML += '<div id="' + file.id + '" style="display: flex;justify-content: space-between;">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
       });
       file_count = files.length
-      uploader.start();
+
+      if('<?=$row['email'] ?>' != ''){
+
+        fetch('<?= base_url() ?>check_data_limit.php',{
+          method:'POST',
+          body : JSON.stringify({
+            'filesize' : files[0]['size']
+          })
+        }).then(res=>res.json()).then(d=>{
+          if(d['status'] == 200){uploader.start();}else{
+            alert("You have exceeded your data limit");
+          }
+        })
+      }else{
+        uploader.start(); // Work on upload user limit 
+      }
     },
 
     UploadProgress: function (up, file) {
