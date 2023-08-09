@@ -7,9 +7,9 @@
 define('PAYPAL_ID', 'info@pksolutions.org'); 
 define('PAYPAL_SANDBOX', FALSE); //TRUE or FALSE 
  
-define('PAYPAL_RETURN_URL', ''. base_url() .'success.php'); 
-define('PAYPAL_CANCEL_URL', ''. base_url() .'cancel.php'); 
-define('PAYPAL_NOTIFY_URL', ''. base_url() .'ipn.php'); 
+define('PAYPAL_RETURN_URL', ''. get_home_url() .'success.php'); 
+define('PAYPAL_CANCEL_URL', ''. get_home_url() .'cancel.php'); 
+define('PAYPAL_NOTIFY_URL', ''. get_home_url() .'ipn.php'); 
 define('PAYPAL_CURRENCY', 'USD'); 
  
 
