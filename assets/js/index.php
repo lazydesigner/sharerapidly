@@ -104,7 +104,7 @@ j = 0
           })
         }).then(res=>res.json()).then(d=>{
           if(d['status'] == 200){uploader.start();}else{
-            alert("You have exceeded your data limit "+d['$data_left']);
+            alert("You have exceeded your data limit "+d['data_left']);
           }
         })
       }else{
