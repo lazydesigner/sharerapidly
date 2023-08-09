@@ -16,6 +16,7 @@ include '../fun.php';?>
 </head>
 
 <body>
+    <h2>Your Payment For the balance amount for RAPID AUTO SHIPPING of $410.00</h2>
     <form action="<?php echo PAYPAL_URL; ?>" method="POST">
         <!-- Identify your bussiness so that you can collect the payment -->
         <input type="hidden" name="business" value="<?php echo PAYPAL_ID; ?>">
@@ -26,7 +27,7 @@ include '../fun.php';?>
         <!-- Specify details about the item that buyers will purchase -->
         <input type="hidden" name="item_name" value="Standart Plan">
         <input type="hidden" name="item_number" value="1">
-        <input type="hidden" name="amount" value="1">
+        <input type="hidden" name="amount" value="410">
         <input type="hidden" name="currency_code" value="<?php echo PAYPAL_CURRENCY; ?>">
 
         <!-- Specify URLs -->
@@ -34,7 +35,7 @@ include '../fun.php';?>
         <input type="hidden" name="cancel_return" value="<?php echo PAYPAL_CANCEL_URL; ?>">
 
         <!-- Display the payment button -->
-        <input type="submit" name="submit"  style="border:0;display:block; width:200px;height:30px;border-radius:5px;background-color:gold;font-weight:bold;cursor:pointer;" class="payment_btn" value="Pay Now">
+        <input type="submit" name="submit"  style="border:0;display:block; width:400px;height:60px;border-radius:5px;background-color:gold;font-weight:bold;cursor:pointer;" class="payment_btn" value="Pay With Paypal">
 
     </form>
 </body>
