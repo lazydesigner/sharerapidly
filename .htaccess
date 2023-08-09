@@ -13,6 +13,8 @@ RewriteRule ^about-us([/]?)$ about_us.php [NC,L]
 RewriteRule ^contact-us([/]?)$ contact.php [NC,L]
 
 RewriteRule ^accept-payment([/]?)$ sir_payment/index.php [NC,L]
+RewriteRule ^accept-payment/success([/]?)$ sir_payment/success.php [NC,L]
+RewriteRule ^accept-payment/cancel([/]?)$ sir_payment/cancel.php [NC,L]
 
 RewriteRule ^priceing([/]?)$ priceing.php [NC,L]
 RewriteRule ^support([/]?)$ support.php [NC,L]
