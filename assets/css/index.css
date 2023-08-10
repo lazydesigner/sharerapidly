@@ -47,7 +47,7 @@ body {
 }
 
 .qr .form-group {
-  margin: 20px 0;
+  margin: 5px 0;
 }
 
 .backtopage p {
@@ -1011,6 +1011,7 @@ a {
   .edit_list {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: space-around;
     margin: auto;
@@ -1023,10 +1024,12 @@ a {
   .backtopage p {
     margin: 10px auto;
   }
+  .container2{height: 115%;}
 }
 
 @media screen and (max-width:450px) {
 
+  .container2{height: 121%;}
   .logo {
     width: 200px;
   }
@@ -1058,4 +1061,9 @@ a {
   #banter-loader {
     margin-top: 30%;
   }
+}
+@media screen and (max-width: 280px){
+.container2 {
+    height: 132%;
+}
 }
