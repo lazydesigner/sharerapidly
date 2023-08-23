@@ -378,7 +378,7 @@ if (mysqli_num_rows($result) > 0) {
         // })
         // localStorage.clear();
 
-        <?php if($row['plan'] == 2){ ?>
+        <?php #if($row['plan'] == 2){ ?>
         document.getElementById('checkbox').addEventListener('change', function(e) {
             e.preventDefault()
             if (this.checked) {
@@ -414,7 +414,7 @@ if (mysqli_num_rows($result) > 0) {
                             'value': this.value
                         })
                     })
-        }) <?php } ?>
+        }) <?php # } ?>
             
     </script>
 

@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
 $coun = mysqli_query($conn, $sql); 
 
 $result = mysqli_query($conn, $sql); 
-    $result_pro  = mysqli_query($conn,  "SELECT * FROM `user_share` WHERE identification = '" . base64_decode($_GET['slug']) . "'"); 
+$result_pro  = mysqli_query($conn,  "SELECT * FROM `user_share` WHERE identification = '" . base64_decode($_GET['slug']) . "'"); 
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +60,25 @@ $result = mysqli_query($conn, $sql);
                         <?php
                         while ($row = $result->fetch_assoc()) {
                             if($row['link_status'] == 'TRUE'){
+                                if($row['password_protected'] == 1 ){
+                                    echo '<div id="password_ha"><div class="file" id="_file_">
+                                    <div style="width: 350px;">
+                                    <h2 style="margin:0;padding:0;">File is Password Protected</h2><br>
+                                    <p id="error_" style="color:tomato;text-align:start;margin:0;padding:0;"></p>
+                                    <input type="text" style="width:100%;border:1px solid lightgrey;" id="file_password" class="file_password" placeholder="Enter File Password" >
+                                     <button class="open_file" id="open_file" style="width:100px;margin-top:5px;border-radius:5px;background:indigo;border:0;height:35px;color:white">Open</button>
+                                    </div>
+                                 </div></div>
+                                 <div id="for_down" style="display:none;" ><div class="file">
+                                 <input type="text" value="' . $row["image"] . '" readonly> <button onclick="Download(\'' . $row['image_path'] . '\',' . $row["id"] . ',\'' . base64_decode($_GET['slug']) . '\')" class="Btn">
+                                     <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                         <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                                     </svg>
+                                     <span class="tooltip">Download</span>
+                                 </button>
+                                 </div>
+                                 </div>';
+                                }else{
                                 echo '<div class="file">
                                 <input type="text" value="' . $row["image"] . '" readonly> <button onclick="Download(\'' . $row['image_path'] . '\',' . $row["id"] . ',\'' . base64_decode($_GET['slug']) . '\')" class="Btn">
                                     <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +86,7 @@ $result = mysqli_query($conn, $sql);
                                     </svg>
                                     <span class="tooltip">Download</span>
                                 </button>
-                                </div>';
+                                </div>';}
                             }else{
                                 echo '<div class="file">
                                 <input type="text" value="' . $row["image"] . '" readonly> <button onclick="alert(\'Plan Is Expired! Renew your plan to download\')" class="Btn">
@@ -167,7 +186,28 @@ $result = mysqli_query($conn, $sql);
         }
         window.addEventListener('resize', handleResize);
         handleResize();
+
+        document.getElementById('open_file').addEventListener('click',function(){
+            document.getElementById('file_password').value
+            fetch('<?= base_url() ?>update',{
+                method:'post',
+                body:JSON.stringify({
+                    'columnName': 'file_password_check',
+                    'password': document.getElementById('file_password').value,
+                    'slug':'<?= base64_decode($_GET['slug']) ?>'
+                })
+            }).then(res=>res.json()).then(d=>{
+                if(d['status'] == 200){
+                    document .getElementById('password_ha').style.display="none";
+                    document .getElementById('for_down').style.display="block";
+                }else{
+                    document.getElementById('error_').innerText = d['message'];
+                }
+            })
+        })
     </script>
+
+
 </body>
 
 </html>

@@ -161,6 +161,47 @@
         }else{
             echo json_encode(['error'=>'Something went wrong please try later!']);
         }
+    } else if ($data['columnName'] == 'file_protection') {
+        $count = $data['protection'];
+        $url = $data['url'];
+
+        //update the count in database
+        $id = explode('/', $url);
+        $id = base64_decode($id[4]);
+            $sql = "UPDATE user_share SET password_protected=$count WHERE identification = '$id'";
+        $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        if ($result) {
+            echo 'done';
+        }else{
+            echo 'error';
+        }
+    }else if ($data['columnName'] == 'file_password') {
+        $url = $data['url'];
+        $pass = $data['value'];
+        //update the count in database  
+        $id = explode('/', $url);
+        $id = base64_decode($id[4]);
+            $sql = "UPDATE user_share SET file_password = '$pass' WHERE identification = '$id'";
+        $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        if ($result) {
+            echo 'done';
+        }else{
+            echo 'error';
+        }
+    } else if ($data['columnName'] == 'file_password_check') {
+        $url = $data['slug'];
+        $pass = $data['password'];
+        //update the count in database  
+        $sql = "SELECT * FROM `user_share` WHERE identification = '$url'";
+        $result = mysqli_query($conn, $sql)or die (mysqli_error($conn));
+        while ($row=mysqli_fetch_assoc($result)){
+            $pass_to_match = $row["file_password"];
+            if($pass_to_match == $pass){
+                echo json_encode(['status'=>200]);
+            }else{
+                echo json_encode(["status"=>513,"message"=>"Password does not match"]);
+            }
+        }
     } else {
         echo json_encode(['id' => 'Query Error', 'spec' => 'expiry']);
     }
