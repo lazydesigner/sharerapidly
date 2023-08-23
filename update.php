@@ -45,7 +45,7 @@
         $count =  $data['count'];
         $url = $data['url'];
         $id = explode('/', $url);
-        $id = base64_decode($id[4]);
+        $id = base64_decode($id[3]);
         $date = date('Y-m-d H:i:s', strtotime($presentDate . '+' . $count . ' days'));
 
         if (isset($_SESSION['user'])) {
@@ -167,7 +167,7 @@
 
         //update the count in database
         $id = explode('/', $url);
-        $id = base64_decode($id[4]);
+        $id = base64_decode($id[3]);
             $sql = "UPDATE user_share SET password_protected=$count WHERE identification = '$id'";
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         if ($result) {
@@ -180,7 +180,7 @@
         $pass = $data['value'];
         //update the count in database  
         $id = explode('/', $url);
-        $id = base64_decode($id[4]);
+        $id = base64_decode($id[3]);
             $sql = "UPDATE user_share SET file_password = '$pass' WHERE identification = '$id'";
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         if ($result) {
