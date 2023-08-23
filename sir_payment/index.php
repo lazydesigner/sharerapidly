@@ -27,7 +27,7 @@ include '../fun.php';?>
         <!-- Specify details about the item that buyers will purchase -->
         <input type="hidden" name="item_name" value="Standart Plan">
         <input type="hidden" name="item_number" value="1">
-        <input type="hidden" name="amount" value="410">
+        <input type="hidden" name="amount" value="500">
         <input type="hidden" name="currency_code" value="<?php echo PAYPAL_CURRENCY; ?>">
 
         <!-- Specify URLs -->
