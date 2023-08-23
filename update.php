@@ -14,7 +14,7 @@
 
         //update the count in database
         $id = explode('/', $url);
-        $id = base64_decode($id[4]);
+        $id = base64_decode($id[3]);
 
         if (isset($_SESSION['user'])) {
             $sql = "UPDATE user_share SET download_count='$count' WHERE identification = '$id'";
