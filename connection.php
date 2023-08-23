@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+session_regenerate_id(true);
 function isLocalServer()
 {
     // Define a list of common local server hostnames or IP addresses
@@ -28,9 +30,9 @@ if (isLocalServer()) {
 } else {
     // Live server settings
     $host = 'localhost';
-$user = 'u654976059_dsfvddf';
+$user = 'u789318280_rapid_share';
 $pass = 'Smile@1427';
-$db = 'u654976059_sharerapidly';
+$db = 'u789318280_sharerapidly';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
