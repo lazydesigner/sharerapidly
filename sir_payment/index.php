@@ -16,7 +16,7 @@ include '../fun.php';?>
 </head>
 
 <body>
-    <h2>Your Payment For the balance amount for RAPID AUTO SHIPPING of $410.00</h2>
+    <h2>Your Payment For the balance amount for RAPID AUTO SHIPPING of $500.00</h2>
     <form action="<?php echo PAYPAL_URL; ?>" method="POST">
         <!-- Identify your bussiness so that you can collect the payment -->
         <input type="hidden" name="business" value="<?php echo PAYPAL_ID; ?>">
