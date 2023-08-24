@@ -1,6 +1,6 @@
 
 <?php
-session_regenerate_id(true);
+// session_regenerate_id(true);
 function isLocalServer()
 {
     // Define a list of common local server hostnames or IP addresses

@@ -1,4 +1,4 @@
-<?php include './fun.php' ?>
+<?php session_start(); include './fun.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 

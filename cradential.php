@@ -58,8 +58,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     while ($row = mysqli_fetch_assoc($result)) {
                         // Storing user data into session
                         session_start();
-                        ini_set('session.gc_maxlifetime', 3600);
-                        session_set_cookie_params(3600);
                         $_SESSION["user"] = $row['name'];
                         $_SESSION["user_id"] = $row['id'];
                         $_SESSION["user_email"] = $row['email'];
