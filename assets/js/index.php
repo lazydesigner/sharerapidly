@@ -95,7 +95,7 @@ j = 0
       });
       file_count = files.length
 
-      // if('<?=$row['email'] ?>' != ''){
+      // if('<?php if(!empty($row)){ echo $row['email']; } ?>' != ''){
 
       //   fetch('<?= base_url() ?>check_data_limit.php',{
       //     method:'POST',

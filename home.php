@@ -7,10 +7,18 @@ session_start();
 include './connection.php';
 include './fun.php' ?>
 <?php
-$sql = "SELECT * FROM userdata AS t1 INNER JOIN priceing AS t2 ON t1.plan = t2.plan_id WHERE t1.email ='{$_SESSION['user_email']}' && t1.id = {$_SESSION['user_id']}  ";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
+if(!empty($_SESSION)){
+    $sql = "SELECT * FROM userdata AS t1 INNER JOIN priceing AS t2 ON t1.plan = t2.plan_id WHERE t1.email ='{$_SESSION['user_email']}' && t1.id = {$_SESSION['user_id']}  ";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+    print_r($row);
+    if(empty($row)){
+        echo 'a';
+    }
+}else{
+    $row = [];
 }
 ?>
 <!DOCTYPE html>
@@ -219,7 +227,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <select name="download_count" id="download_count">
                                     <option value="1">1 Download </option>
                                     <option value="2">2 Downloads </option>
-                                    <?php if ($row['plan'] == 1 || $row['plan'] == 2) { ?>
+                                    <?php if(!empty($row)){ if ($row['plan'] == 1 || $row['plan'] == 2) { ?>
                                         <option value="3">3 Downloads </option>
                                         <option value="4">4 Downloads </option>
                                         <option value="5" selected>5 Downloads </option>
@@ -229,7 +237,7 @@ if (mysqli_num_rows($result) > 0) {
                                         <option value="4" disabled>4 Downloads <span id="pre">(Premium)</span></option>
                                         <option value="5" disabled>5 Downloads <span id="pre">(Premium)</span></option>
                                     <?php
-                                    } ?>
+                                    } } ?>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -252,7 +260,7 @@ if (mysqli_num_rows($result) > 0) {
                                     } ?>
                                 </select>
                             </div>
-                            <?php if($row['plan'] == 2){ ?>
+                            <?php if(!empty($row)){ if($row['plan'] == 2){ ?>
                             <div class="form-group">
                                 <div class="password_protected">
                                     <div class="cl-toggle-switch">
@@ -265,7 +273,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <input type="text" name="filepassword" id="filepassword" class="filepassword" placeholder="Enter file password">
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php } } ?>
                         </div>
                     </div>
                     <div class="backtopage">
@@ -378,7 +386,7 @@ if (mysqli_num_rows($result) > 0) {
         // })
         // localStorage.clear();
 
-        <?php if($row['plan'] == 2){ ?>
+        <?php if(!empty($row)){ if($row['plan'] == 2){ ?>
         document.getElementById('checkbox').addEventListener('change', function(e) {
             e.preventDefault()
             if (this.checked) {
@@ -414,7 +422,7 @@ if (mysqli_num_rows($result) > 0) {
                             'value': this.value
                         })
                     })
-        }) <?php  } ?>
+        }) <?php } } ?>
             
     </script>
 
