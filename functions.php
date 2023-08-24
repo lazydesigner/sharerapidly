@@ -1,7 +1,7 @@
 <?php session_start();
 
-ini_set('session.gc_maxlifetime', 3600);
-session_set_cookie_params(3600);
+// ini_set('session.gc_maxlifetime', 3600);
+// session_set_cookie_params(3600);
 include './fun.php' ?>
 
 <?php
@@ -186,8 +186,9 @@ $result_pro  = mysqli_query($conn,  "SELECT * FROM `user_share` WHERE identifica
         }
         window.addEventListener('resize', handleResize);
         handleResize();
-
-        document.getElementById('open_file').addEventListener('click',function(){
+        
+        if (document.getElementById('open_file')){
+            document.getElementById('open_file').addEventListener('click',function(){
             document.getElementById('file_password').value
             fetch('<?= base_url() ?>update',{
                 method:'post',
@@ -204,7 +205,9 @@ $result_pro  = mysqli_query($conn,  "SELECT * FROM `user_share` WHERE identifica
                     document.getElementById('error_').innerText = d['message'];
                 }
             })
-        })
+            })
+        }
+        
     </script>
 
 

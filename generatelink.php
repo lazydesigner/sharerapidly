@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-ini_set('session.gc_maxlifetime', 3600);
-session_set_cookie_params(3600);
+// ini_set('session.gc_maxlifetime', 3600);
+// session_set_cookie_params(3600);
 include './connection.php';
 
 $data = file_get_contents('php://input');
