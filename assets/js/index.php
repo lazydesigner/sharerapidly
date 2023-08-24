@@ -73,10 +73,10 @@ j = 0
   filters: {
     max_file_size: '<?php if(isset($row['upload_size'])){echo $row['upload_size'];}else{echo '2GB';}?>',
     mime_types: [
-      { title: "Image files", extensions: "jpg,jpeg,gif,png,webp" },
-      { title: "Video files", extensions: "mp4,avi,mpeg,mpg,mov,wmv" },
+      { title: "Image files", extensions: "jpg,jpeg,gif,png,webp,tif,tiff,bmp,eps,raw" },
+      { title: "Video files", extensions: "mp4,avi,mpeg,mpg,mov,wmv,mkv,avchd,flv,f4v,swf,webm" },
       { title: "Zip files", extensions: "zip,rar,rar4" },
-      { title: "Document files", extensions: "pdf,docx,xlsx,txt,exe" }
+      { title: "Document files", extensions: "pdf,docx,xlsx,txt,exe,ppt,html,css,php,py,eps,ai,psd" }
     ]
   },
 
