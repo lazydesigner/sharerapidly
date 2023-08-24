@@ -1,6 +1,9 @@
 <?php session_start();
-include './fun.php'
+include './fun.php';
+
+
 ?>
+
 <?php
     include './connection.php';
     date_default_timezone_set('Asia/Kolkata');
@@ -107,7 +110,8 @@ include './fun.php'
                     $fileName = basename($filePath);
                     $fileSize = filesize($filePath);
 
-                    $user_1 = "SELECT * FROM `userdata` WHERE id = {$_SESSION['user_id']} ";
+                    if(!empty($_SESSION)){
+                        $user_1 = "SELECT * FROM `userdata` WHERE id = {$_SESSION['user_id']} ";
                     $result22 = mysqli_query($conn, $user_1);
                     if (mysqli_num_rows($result22) > 0) {
                         $r = mysqli_fetch_assoc($result22);
@@ -115,6 +119,11 @@ include './fun.php'
                             $count = 5;
                         }else{ $count = 2;}
                     }else{ $count = 2;}
+                    }else{
+                        $count = 2;
+                    }
+
+                    
 
                     if (isset($_SESSION['user'])) {
                         $query = "INSERT INTO user_share(`image`,`image_path`,`image_type`,`image_size` ,`identification`,`download_count`,`expiry`,`user_id`) VALUES ('$fileName','$targetFile','$image_type',$image_size ,'$identificatin',$count ,'$futureDate',{$_SESSION['user_id']} )";
