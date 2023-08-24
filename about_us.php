@@ -94,7 +94,14 @@
         color:rgb(98, 98, 98)
       }
 
-
+      @media screen and (max-width:425px) {
+        .varient2{    flex-wrap: wrap;height: auto;}
+        .first_p .first { width: 100%;}
+      
+        .content1 p {
+    width: 100%;
+}
+      }
     </style>
 </head>
 
