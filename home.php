@@ -7,11 +7,11 @@ session_start();
 include './connection.php';
 include './fun.php' ?>
 <?php
-// $sql = "SELECT * FROM userdata AS t1 INNER JOIN priceing AS t2 ON t1.plan = t2.plan_id WHERE t1.email ='{$_SESSION['user_email']}' && t1.id = {$_SESSION['user_id']}  ";
-// $result = mysqli_query($conn, $sql);
-// if (mysqli_num_rows($result) > 0) {
-//     $row = mysqli_fetch_assoc($result);
-// }
+$sql = "SELECT * FROM userdata AS t1 INNER JOIN priceing AS t2 ON t1.plan = t2.plan_id WHERE t1.email ='{$_SESSION['user_email']}' && t1.id = {$_SESSION['user_id']}  ";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
