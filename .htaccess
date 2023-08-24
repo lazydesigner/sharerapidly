@@ -16,7 +16,7 @@ RewriteRule ^accept-payment([/]?)$ sir_payment/index.php [NC,L]
 RewriteRule ^accept-payment/success([/]?)$ sir_payment/success.php [NC,L]
 RewriteRule ^accept-payment/cancel([/]?)$ sir_payment/cancel.php [NC,L]
 
-RewriteRule ^priceing([/]?)$ priceing.php [NC,L]
+RewriteRule ^pricing([/]?)$ priceing.php [NC,L]
 RewriteRule ^support([/]?)$ support.php [NC,L]
 RewriteRule ^downloadfile/([0-9A-Za-z\-=]+)/([0-9A-Za-z\-=]+)/?$ download.php?slug=$1&id=$2 [NC,L]
 RewriteRule ^redirect([/]?)$ redirect.php [NC,L]
