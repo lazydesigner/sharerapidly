@@ -9,7 +9,7 @@
             <ul class="navbar__list">
                 <li><a href="<?= get_home_url() ?>">Home</a></li>
                 <li><a href="<?= get_home_url() ?>about-us">About Us</a></li>
-                <li><a href="<?= get_home_url() ?>priceing">Pricing</a></li>
+                <li><a href="<?= get_home_url() ?>pricing">Pricing</a></li>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <li class="user_">
                         <a href="<?= get_home_url() ?>account/profile" id="user_nav_name"><?= $_SESSION['user'] ?><i class="ri-arrow-down-s-fill"></i></a>
