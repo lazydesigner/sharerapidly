@@ -13,10 +13,6 @@ if(!empty($_SESSION)){
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
     }
-    print_r($row);
-    if(empty($row)){
-        echo 'a';
-    }
 }else{
     $row = [];
 }
