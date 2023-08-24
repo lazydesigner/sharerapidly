@@ -1,10 +1,15 @@
 <?php include './fun.php'; session_start() ?>
 <?php require_once 'config.php';?>
 <?php require_once 'connection.php';
-$user = "SELECT * FROM userdata WHERE id = {$_SESSION['user_id']} ";
-$res = mysqli_query($conn, $user);
-if($res){
-    if(mysqli_num_rows($res)>0){$row = mysqli_fetch_assoc($res);}
+
+if(!empty($_SESSION)){
+    $user = "SELECT * FROM userdata WHERE id = {$_SESSION['user_id']} ";
+    $res = mysqli_query($conn, $user);
+    if($res){
+        if(mysqli_num_rows($res)>0){$row = mysqli_fetch_assoc($res);}
+    }
+}else{
+    $row = [];
 }
 ?>
 <!DOCTYPE html>
@@ -126,7 +131,7 @@ if($res){
             <div class="col-1">
                 <div class="price-tag-head">
                     <span style="display:flex;align-items:center;justify-content:center;">
-                        <h2>Free</h2><?php if($row['plan'] == 3 ){?>(Active)<?php } ?>
+                        <h2>Free</h2><?php if(isset($row['plan'])){if($row['plan'] == 3 ){?>(Active)<?php }}else{?>(Active)<?php } ?>
                     </span>
                     <div class="price-tag">
                         <div style="position: relative;"><b>$</b><span>0</span></div>/mo
@@ -146,7 +151,7 @@ if($res){
             <div class="col-1">
                 <div class="price-tag-head">
                     <span style="display:flex;align-items:center;justify-content:center;">
-                        <h2>Standard</h2><?php if($row['plan'] == 1 ){?>(Active)<?php } ?>
+                        <h2>Standard</h2><?php if(isset($row['plan'])){if($row['plan'] == 1 ){?>(Active)<?php }} ?>
                     </span>
                     <div class="price-tag">
                         <div style="position: relative;"><b>$</b><span>10</span></div>/mo
@@ -195,7 +200,7 @@ if($res){
             <div class="col-1">
                 <div class="price-tag-head">
                     <span style="display:flex;align-items:center;justify-content:center;">
-                        <h2>Premium</h2><?php if($row['plan'] == 2 ){?>(Active)<?php } ?>
+                        <h2>Premium</h2><?php if(isset($row['plan'])){if($row['plan'] == 2 ){?>(Active)<?php }} ?>
                     </span>
                     <div class="price-tag">
                         <div style="position: relative;"><b>$</b><span>25</span></div>/mo
