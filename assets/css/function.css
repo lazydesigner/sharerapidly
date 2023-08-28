@@ -202,6 +202,7 @@ input{
       align-items: center;
       justify-content: center;
       transition: 1s;
+      z-index: 50;
     }
     .box {margin-top: 10%;}
     .close{display: block;position: absolute;top: 5%;right:5%;color:black;font-size: xx-large;cursor: pointer;}
