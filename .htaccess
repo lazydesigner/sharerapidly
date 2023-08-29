@@ -3,6 +3,7 @@ php_value mbstring.http_input auto
 php_value date.timezone Asia/Calcutta
 php_value upload_max_filesize  512M
 php_value post_max_size 512M
+php_value max_execution_time 3600
 RewriteEngine on
 Options -Indexes
 RewriteCond %{HTTPS} off
