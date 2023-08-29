@@ -33,10 +33,13 @@ if (file_exists($file) && is_readable($file)) {
         header('Content-Length: ' . filesize($file));
 
         // Read and send the file in chunks
+        $chunkSize = 1024 * 1024; // 1MB chunk size
         while (!feof($handle)) {
-            echo fread($handle, 1024 * 1024); // Send 1MB chunk
+            echo fread($handle, $chunkSize);
             ob_flush();
             flush();
+            // Sleep for a short while to control the download speed
+            usleep(100000); // 100ms
         }
 
         // Close the file handle
@@ -49,6 +52,7 @@ if (file_exists($file) && is_readable($file)) {
     // Handle file not found or not readable
     echo "File not found or not readable.";
 }
+
 
 
 
