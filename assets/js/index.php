@@ -68,7 +68,7 @@ j = 0
   url: 'upload.php',
   flash_swf_url: 'plupload/js/Moxie.swf',
   silverlight_xap_url: 'plupload/js/Moxie.xap',
-  multi_selection: false,
+  multi_selection: true,
   chunk_size: "10mb",
   filters: {
     max_file_size: '<?php if(isset($row['upload_size'])){echo $row['upload_size'];}else{echo '2GB';}?>',
