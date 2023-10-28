@@ -104,7 +104,8 @@ if(isset($_SESSION['user'])){
                                                     <td><a href="' . $row['link'] . '" target="_blank">' . $row['link'] . '</a></td>
                                                     <td>' . $row['download_count'] . '</td>
                                                     <td>' . $normalTime2 . '</td>
-                                                    <td>' . $normalTime . '</td>
+                                                    // <td>' . $normalTime . '</td>
+                                                    <td>'.$samelink.'</td>
                                                 </tr>
                                             ';
                                                     $samelink = $row['link'];
