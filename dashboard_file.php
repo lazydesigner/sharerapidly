@@ -107,7 +107,7 @@ if(isset($_SESSION['user'])){
                                                     <td>' . $normalTime . '</td>
                                                 </tr>
                                             ';
-                                                    $samelink = $row['link']
+                                                    $samelink = $row['link'];
                                                     }                                                
                                             }else{
                                                 echo '
