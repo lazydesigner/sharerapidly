@@ -96,7 +96,7 @@ if(isset($_SESSION['user'])){
                                             $timestamp2 = strtotime($row['created']);
                                             $normalTime2 = date("Y-m-d H:i:s", $timestamp2);
                                             if($row['link_status'] == 'TRUE'){
-                                                
+                                                if(!$samelink == $row['link']){
                                                    echo '
                                                 <tr class="table_data">
                                                     <td>' . $row['image'] . '</td>
@@ -105,7 +105,9 @@ if(isset($_SESSION['user'])){
                                                     <td>' . $normalTime2 . '</td>
                                                     <td>' . $normalTime . '</td>
                                                 </tr>
-                                            ';                                             
+                                            ';  
+                                                    $samelink = $row['link'];
+}                                          
                                             }else{
                                                 echo '
                                                 <tr class="table_data" style="color:grey;">
