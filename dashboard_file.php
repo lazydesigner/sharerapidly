@@ -97,19 +97,15 @@ if(isset($_SESSION['user'])){
                                             $normalTime2 = date("Y-m-d H:i:s", $timestamp2);
                                             if($row['link_status'] == 'TRUE'){
                                                 
-                                                if(!$samelink == $row['link']){
                                                    echo '
                                                 <tr class="table_data">
                                                     <td>' . $row['image'] . '</td>
                                                     <td><a href="' . $row['link'] . '" target="_blank">' . $row['link'] . '</a></td>
                                                     <td>' . $row['download_count'] . '</td>
                                                     <td>' . $normalTime2 . '</td>
-                                                    // <td>' . $normalTime . '</td>
-                                                    <td>'.$samelink.'</td>
+                                                    <td>' . $normalTime . '</td>
                                                 </tr>
-                                            ';
-                                                    $samelink = $row['link'];
-                                                    }                                                
+                                            ';                                             
                                             }else{
                                                 echo '
                                                 <tr class="table_data" style="color:grey;">
