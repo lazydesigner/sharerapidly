@@ -97,7 +97,7 @@ if(isset($_SESSION['user'])){
                                             $normalTime2 = date("Y-m-d H:i:s", $timestamp2);
                                             if($row['link_status'] == 'TRUE'){
                                                 
-                                                if($samelink == $row['link']){
+                                                if(!$samelink == $row['link']){
                                                    echo '
                                                 <tr class="table_data">
                                                     <td>' . $row['image'] . '</td>
