@@ -87,6 +87,7 @@ if(isset($_SESSION['user'])){
                                 $sql = "SELECT * FROM userdata AS t1 INNER JOIN user_share AS t2 ON t1.id = t2.user_id WHERE t1.email ='{$_SESSION['user_email']}' && t1.id = {$_SESSION['user_id']} ";
                                 // $sql = "SELECT * FROM `userdata` WHERE id = {$_SESSION['user_id']} && email = '{$_SESSION['user_email']}'";
                                 $result = mysqli_query($conn, $sql);
+                                $samelink = "";
                                 if ($result) {
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -95,7 +96,9 @@ if(isset($_SESSION['user'])){
                                             $timestamp2 = strtotime($row['created']);
                                             $normalTime2 = date("Y-m-d H:i:s", $timestamp2);
                                             if($row['link_status'] == 'TRUE'){
-                                                echo '
+                                                
+                                                if($samelink == $row['link']){
+                                                   echo '
                                                 <tr class="table_data">
                                                     <td>' . $row['image'] . '</td>
                                                     <td><a href="' . $row['link'] . '" target="_blank">' . $row['link'] . '</a></td>
@@ -104,6 +107,8 @@ if(isset($_SESSION['user'])){
                                                     <td>' . $normalTime . '</td>
                                                 </tr>
                                             ';
+                                                    $samelink = $row['link']
+                                                    }                                                
                                             }else{
                                                 echo '
                                                 <tr class="table_data" style="color:grey;">
