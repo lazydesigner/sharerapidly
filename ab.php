@@ -30,7 +30,8 @@ if (file_exists($file) && is_readable($file)) {
         // Set the appropriate headers
         header("Content-Description: File Transfer");
         header("Content-Type: application/octet-stream");
-        header('Content-Disposition: attachment; filename="' . basename($file) . '"');
+        header('Content-Disposition: attachment; filename="' . basename($file) . '"');        
+        header('X-Sendfile: ' . $file);
         header('Content-Length: ' . filesize($file));
 
         // Read and send the file in chunks
